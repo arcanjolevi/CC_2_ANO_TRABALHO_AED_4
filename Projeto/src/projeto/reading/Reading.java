@@ -15,7 +15,7 @@ public class Reading {
         String line;
         String separator = "$";
         try {
-            File file = new File("/home/levi/NetBeansProjects/CC_2_ANO_TRABALHO_AED_4/arquivo.txt");
+            File file = new File(locationString);
             FileReader fileReader = new FileReader(file);
             BufferedReader fileBuffer = new BufferedReader(fileReader);
             
