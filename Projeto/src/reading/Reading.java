@@ -26,7 +26,7 @@ public class Reading {
                 line = fileBuffer.readLine();                    
             }            
         } catch (IOException e) {
-            System.err.println("Erro na leitura de Arquivo");
+            System.err.println("Erro na leitura de arquivo");
         }
         return content;
     }
