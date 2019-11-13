@@ -1,4 +1,4 @@
-package projeto.reading;
+package reading;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,7 +26,7 @@ public class Reading {
                 line = fileBuffer.readLine();                    
             }            
         } catch (IOException e) {
-            System.err.println("Erro na Leitura de Arquivo");
+            System.err.println("Erro na leitura de Arquivo");
         }
         return content;
     }
