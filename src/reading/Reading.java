@@ -15,8 +15,8 @@ public class Reading {
     public static String[] readFile(String locationString){
         String content = "";
         String line;
-        String separator = "$";
-        String[] aux;
+        String separator = ";";
+        
         try {
             File file = new File(locationString);
             FileReader fileReader = new FileReader(file);
@@ -24,15 +24,15 @@ public class Reading {
 
             line = fileBuffer.readLine();
             while(line != null){ 
-                aux = line.split(" ");
-                for(String a: aux)
-                    content += a;                
+                content += line;                              
                 content += separator;
                 line = fileBuffer.readLine();                    
             }            
         } catch (IOException e) {
             System.err.println("Erro na leitura de arquivo");
         }
+        
+        
         return content.split(separator);
     }
 }
