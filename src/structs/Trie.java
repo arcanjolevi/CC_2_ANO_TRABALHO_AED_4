@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package structs;
-
+import static reading.Reading.isValid;
 /**
  *
  * @author levi
@@ -22,43 +22,33 @@ public class Trie {
         this.number = 0;
     }
     
-    public void showCenter(Cellule r, String word){
+    public void showAux(Cellule r, String word){
         String aux = word;
         
         if(r != null){
                
-            showCenter(r.getLeft(), aux);
+            showAux(r.getLeft(), aux);
             
             word += String.valueOf(r.getC());
             if(r.getNumber() != -1)
                 System.out.println(word);
-            showCenter(r.getCenter(), word);                           
+            showAux(r.getCenter(), word);                           
             
-            showCenter(r.getRight(), aux); 
+            showAux(r.getRight(), aux); 
         }           
     }
     
     public void show(){
-        this.showAux(this.node);
-    }
-    
-    public void showAux(Cellule r){
-        if(r != null){
-            showAux(r.getLeft());
-            
-            showCenter(r, "");
-            
-            showAux(r.getRight());
-        }        
+        this.showAux(this.node, "");
     }
     
     public void insert(String word){
         word = word.toLowerCase();
-        if(word.matches("[^~#@*+%{}<>\\[\\]|\"\\_^]*"))
+        if(isValid(word)) {
             this.node = this.insertAux(this.node, word);
-        else{
+        } else
             System.err.println("Comtem Caracteres Invalidos");
-        }
+            
     }
     
     public Cellule insertAux(Cellule r, String word){

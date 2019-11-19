@@ -12,6 +12,20 @@ import java.io.*;
  * @author levi
  */
 public class Reading {
+    
+    public static boolean isValid(String a){
+        char[] b = a.toCharArray();
+        for(char x:b){
+            if(x < 'a')               
+                return false;
+            if(x > 'z' && x < 'A')                
+                return false;
+            if(x > 'z')
+               return false;              
+        }
+        return true;               
+    }
+    
     public static String[] readFile(String locationString){
         String content = "";
         String line;
