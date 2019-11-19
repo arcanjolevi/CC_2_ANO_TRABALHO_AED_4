@@ -34,8 +34,12 @@ public class Main {
       teste.insert("rua");
       teste.show();
       */
-       
-    
+      Trie teste = new Trie();
+      
+      String[] palavras = Reading.readFile("/home/levi/NetBeansProjects/Trabalho4AED/arquivo.txt");
+      for(String x: palavras)
+          teste.insert(x);
+      teste.show();
       
       
       

@@ -42,6 +42,27 @@ public class Trie {
         this.showAux(this.node, "");
     }
     
+    public String queryWord(Cellule r, String word){
+        String query = word;
+        char firstChar = word.charAt(0);
+        if(r != null){   
+            
+            if(firstChar < r.getC()){
+                query += queryWord(r.getLeft(), word);
+            }else if(firstChar > r.getC()){
+                query += queryWord(r.getRight(), word);
+            }else{            
+                showAux(r.getLeft(), aux);
+
+                word += String.valueOf(r.getC());
+                if(r.getNumber() != -1)
+                    System.out.println(word);
+                showAux(r.getCenter(), word);                           
+
+                showAux(r.getRight(), aux); 
+            } 
+    }
+    
     public void insert(String word){
         word = word.toLowerCase();
         if(isValid(word)) {
