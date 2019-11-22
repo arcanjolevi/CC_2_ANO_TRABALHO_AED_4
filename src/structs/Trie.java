@@ -10,8 +10,9 @@ import static reading.Reading.isValid;
  * @author levi
  */
 public class Trie {
-    Cellule node;
-    int number;
+    private Cellule node;
+    private int number;
+    private String buffer;
     
     public Cellule getNode(){
         return this.node;
@@ -20,6 +21,7 @@ public class Trie {
     public Trie(){
         this.node = null;
         this.number = 0;
+        this.buffer = "";
     }
     
     public void showAux(Cellule r, String word){
@@ -38,29 +40,55 @@ public class Trie {
         }           
     }
     
+    public String getDictionary(){
+        this.buffer = "";
+        this.getDictionary(this.node, "");
+        String aux = this.buffer;
+        this.buffer = "";
+        return aux;
+    }
+    private void getDictionary(Cellule r, String word){
+        String aux = word;
+        if(r != null){               
+            getDictionary(r.getLeft(), aux);           
+            
+            word += String.valueOf(r.getC());
+            if(r.getNumber() != -1)
+                this.buffer += word + "\n";
+            getDictionary(r.getCenter(), word);                           
+            
+            getDictionary(r.getRight(), aux); 
+        }           
+    }
+    
     public void show(){
         this.showAux(this.node, "");
     }
     
-    public String queryWord(Cellule r, String word){
-        String query = word;
+    public String queryWord(String word){
+        return this.queryWord(this.node, word, word);
+    }
+    
+    public String queryWord(Cellule r, String word, String query){
+        
         char firstChar = word.charAt(0);
-        if(r != null){   
-            
+        if(r != null){               
             if(firstChar < r.getC()){
-                query += queryWord(r.getLeft(), word);
+               return queryWord(r.getLeft(), word, query);
             }else if(firstChar > r.getC()){
-                query += queryWord(r.getRight(), word);
-            }else{            
-                showAux(r.getLeft(), aux);
-
-                word += String.valueOf(r.getC());
-                if(r.getNumber() != -1)
-                    System.out.println(word);
-                showAux(r.getCenter(), word);                           
-
-                showAux(r.getRight(), aux); 
-            } 
+               return queryWord(r.getRight(), word, query);
+            }else{
+                if(word.length() > 1){
+                    word = word.substring(1);
+                    return queryWord(r.getCenter(), word, query);
+                }else{
+                    showAux(r.getCenter(), query);
+                    return "";
+                }
+                    
+            }  
+        }
+        return "chegou";
     }
     
     public void insert(String word){

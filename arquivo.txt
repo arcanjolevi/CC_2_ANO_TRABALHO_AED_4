@@ -1,3 +1,11 @@
+cama
+pais
+raio
+pai
+riso
+teto
+pata
+rua
 neurociencia
 neurogenese
 neurogenico
@@ -8,11 +16,3 @@ neuronio
 neuropatia
 neuropediatra
 neuropsicologia
-cama
-pais
-raio
-pai
-riso
-teto
-pata
-rua
