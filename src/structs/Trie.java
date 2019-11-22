@@ -66,29 +66,31 @@ public class Trie {
     }
     
     public String queryWord(String word){
-        return this.queryWord(this.node, word, word);
+        this.buffer = "";
+        String aux;
+        this.queryWord(this.node, word, word);
+        aux = this.buffer;
+        this.buffer = "";
+        return aux;
     }
     
-    public String queryWord(Cellule r, String word, String query){
+    private void queryWord(Cellule r, String word, String query){
         
         char firstChar = word.charAt(0);
         if(r != null){               
             if(firstChar < r.getC()){
-               return queryWord(r.getLeft(), word, query);
+               queryWord(r.getLeft(), word, query);
             }else if(firstChar > r.getC()){
-               return queryWord(r.getRight(), word, query);
+               queryWord(r.getRight(), word, query);
             }else{
                 if(word.length() > 1){
                     word = word.substring(1);
-                    return queryWord(r.getCenter(), word, query);
+                    queryWord(r.getCenter(), word, query);
                 }else{
-                    showAux(r.getCenter(), query);
-                    return "";
-                }
-                    
+                    getDictionary(r.getCenter(), query);                    
+                }                    
             }  
         }
-        return "chegou";
     }
     
     public void insert(String word){

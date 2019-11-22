@@ -42,7 +42,7 @@ public class Main {
       //teste.show();
       
         
-        System.err.println(teste.getDictionary());
+        System.err.println(teste.queryWord("c"));
       
       
       
