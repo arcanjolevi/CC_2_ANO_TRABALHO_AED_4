@@ -61,6 +61,20 @@ public class Trie {
         }           
     }
     
+    private void getDictionaryComma(Cellule r, String word){
+        String aux = word;
+        if(r != null){               
+            getDictionaryComma(r.getLeft(), aux);           
+            
+            word += String.valueOf(r.getC());
+            if(r.getNumber() != -1)
+                this.buffer += word + ", ";
+            getDictionaryComma(r.getCenter(), word);                           
+            
+            getDictionaryComma(r.getRight(), aux); 
+        }           
+    }
+    
     public void show(){
         this.showAux(this.node, "");
     }
@@ -69,7 +83,7 @@ public class Trie {
         this.buffer = "";
         String aux;
         this.queryWord(this.node, word, word);
-        aux = this.buffer;
+        aux = this.buffer + "\n";
         this.buffer = "";
         return aux;
     }
