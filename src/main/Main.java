@@ -40,9 +40,9 @@ public class Main {
       for(String x: palavras)
           teste.insert(x);
       //teste.show();
-      
+        System.err.println(teste.countWords());
         
-        System.err.println(teste.queryWord("c"));
+      
       
       
       

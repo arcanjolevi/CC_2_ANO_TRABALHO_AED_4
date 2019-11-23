@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package structs;
+import org.w3c.dom.css.Counter;
 import static reading.Reading.isValid;
 /**
  *
@@ -13,6 +14,7 @@ public class Trie {
     private Cellule node;
     private int number;
     private String buffer;
+    private int counter;
     
     public Cellule getNode(){
         return this.node;
@@ -22,6 +24,57 @@ public class Trie {
         this.node = null;
         this.number = 0;
         this.buffer = "";
+        this.counter = 0;
+        
+    }
+    
+    public int countWords(){
+        this.counter = 0;
+        this.countWords(this.node);
+        return this.counter;
+    }
+    
+    private void countWords(Cellule r){
+        if(r != null){
+            countWords(r.getLeft());
+            countWords(r.getCenter());
+            countWords(r.getRight());
+            if(r.getNumber() != -1)
+                this.counter = this.counter + 1;
+        }
+    }
+    
+    public void removeWord(String word){
+        this.node = this.removeWord(this.node, word);
+    }
+    
+    private boolean checkSoonsNull(Cellule r){
+       return (r.getLeft() == null && r.getCenter() == null && r.getLeft() == null);       
+    }
+    
+    private Cellule removeWord(Cellule r, String word){
+        if(r != null){
+            if(word.charAt(0) < r.getC()){
+                r.setLeft(this.removeWord(r.getLeft(), word));
+            }else if(word.charAt(0) > r.getC()){
+                r.setRight(this.removeWord(r.getRight(), word));
+            }else{
+                if(word.length() > 1){
+                    r.setCenter(this.removeWord(r.getCenter(), word.substring(1)));                    
+                }
+                if(this.checkSoonsNull(r))
+                    return null;
+                else if(r.getRight() != null){
+                    r.setCenter(r.getRight());
+                    r.setRight(null);
+                }else{
+                    r.setCenter(r.getLeft());
+                    r.setLeft(null);
+                }
+                
+            }                
+        }
+        return r;
     }
     
     public void showAux(Cellule r, String word){
