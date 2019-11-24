@@ -45,7 +45,12 @@ public class Trie {
     }
     
     public void removeWord(String word){
-        this.node = this.removeWord(this.node, word);
+        word = word.toLowerCase();
+        if(isValid(word)) {
+            this.node = this.removeWord(this.node, word);
+        } else
+            System.out.println("Comtem Caracteres Invalidos");
+        
     }
     
     private boolean checkSoonsNull(Cellule r){
@@ -134,17 +139,22 @@ public class Trie {
         }           
     }
     
-    private void getDictionaryComma(Cellule r, String word){
+    
+    
+    private void getDictionaryLimit(Cellule r, String word){
         String aux = word;
-        if(r != null){               
-            getDictionaryComma(r.getLeft(), aux);           
+        if(r != null && this.counter < 10){               
+            getDictionaryLimit(r.getLeft(), aux);           
             
             word += String.valueOf(r.getC());
-            if(r.getNumber() != -1)
-                this.buffer += word + ", ";
-            getDictionaryComma(r.getCenter(), word);                           
+            if(r.getNumber() != -1){
+                this.buffer += word + "\n";
+                this.counter ++;
+            }
+                
+            getDictionaryLimit(r.getCenter(), word);                           
             
-            getDictionaryComma(r.getRight(), aux); 
+            getDictionaryLimit(r.getRight(), aux); 
         }           
     }
     
@@ -174,7 +184,8 @@ public class Trie {
                     word = word.substring(1);
                     queryWord(r.getCenter(), word, query);
                 }else{
-                    getDictionary(r.getCenter(), query);                    
+                    this.counter = 0;
+                    getDictionaryLimit(r.getCenter(), query);
                 }                    
             }  
         }
@@ -185,7 +196,7 @@ public class Trie {
         if(isValid(word)) {
             this.node = this.insertAux(this.node, word);
         } else
-            System.err.println("Comtem Caracteres Invalidos");
+            System.out.println("Comtem Caracteres Invalidos");
             
     }
     

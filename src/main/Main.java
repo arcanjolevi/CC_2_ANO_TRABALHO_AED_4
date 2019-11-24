@@ -39,11 +39,11 @@ public class Main {
       String[] palavras = Reading.readFile("/home/levi/NetBeansProjects/Trabalho4AED/arquivo.txt");
       for(String x: palavras)
           teste.insert(x);
-      //teste.show();
+      teste.show();
       System.out.println(teste.countWords());
         System.out.println("---------");
       
-        System.err.println(teste.similar("bama", 2));
+      
       
       
       
