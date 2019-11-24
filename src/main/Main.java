@@ -43,7 +43,7 @@ public class Main {
       System.out.println(teste.countWords());
         System.out.println("---------");
       
-      teste.removeWord("cama");
+      
       teste.show();
       System.out.println(teste.countWords());
       
