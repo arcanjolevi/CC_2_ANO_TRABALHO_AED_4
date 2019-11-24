@@ -223,4 +223,30 @@ public class Trie {
         }
         return r;
     }
+    
+    public void similar(Cellule r, String word, String similar, int different){
+        
+        if(r != null && different >= 0){
+            similar(r.getLeft(), word, similar, different);
+            if(word.length() > 1){
+                if(word.charAt(0) == r.getC())
+                    similar(r.getCenter(), word.substring(1), similar + r.getC(), different);
+                else
+                    similar(r.getCenter(), word.substring(1), similar + r.getC(), different - 1);
+            }else{
+                
+                if(word.charAt(0) == r.getC() && r.getNumber() != -1){
+                    System.out.println(similar + r.getC());
+                    similar(r.getCenter(), word, similar + r.getC(), different);
+                }else{
+                    if(r.getNumber() != -1 && different > 0)
+                        System.out.println(similar + r.getC());
+                    similar(r.getCenter(), word, similar + r.getC(), different - 1);
+                }
+                
+            }
+            
+            similar(r.getRight(), word, similar, different);            
+        }
+    }
 }
