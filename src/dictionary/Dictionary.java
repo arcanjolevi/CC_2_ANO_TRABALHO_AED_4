@@ -35,7 +35,7 @@ public class Dictionary {
         return this.dictionary.queryWord(word);
     }
     
-    public String getWord(){
+    public String getWords(){
         return this.dictionary.getDictionary();
     }
     
