@@ -52,6 +52,20 @@ public class Trie {
        return (r.getLeft() == null && r.getCenter() == null && r.getLeft() == null);       
     }
     
+    private void setMinimum(Cellule r, Cellule minimum){
+        if(r.getLeft() == null)
+            r.setLeft(minimum);
+        else
+            setMinimum(r.getLeft(), minimum);
+    }
+    
+    private void setMaximum(Cellule r, Cellule max){
+        if(r.getRight() == null)
+            r.setRight(max);
+        else
+            setMaximum(r.getRight(), max);
+    }
+    
     private Cellule removeWord(Cellule r, String word){
         if(r != null){
             if(word.charAt(0) < r.getC()){
@@ -61,17 +75,23 @@ public class Trie {
             }else{
                 if(word.length() > 1){
                     r.setCenter(this.removeWord(r.getCenter(), word.substring(1)));                    
+                }else if(r.getNumber() != -1){                    
+                    if(r.getCenter() != null){
+                       r.setNumber(-1);
+                    }else{
+                        return null;
+                    }
                 }
-                if(this.checkSoonsNull(r))
-                    return null;
-                else if(r.getRight() != null){
-                    r.setCenter(r.getRight());
-                    r.setRight(null);
-                }else{
-                    r.setCenter(r.getLeft());
-                    r.setLeft(null);
+                if(r.getNumber() == -1){
+                    if(r.getCenter() == null){
+                        if(r.getRight() != null){
+                            setMinimum(r.getRight(), r.getLeft());
+                            return r.getRight();                    
+                        }else{
+                            return r.getLeft();
+                        }
+                    }  
                 }
-                
             }                
         }
         return r;
