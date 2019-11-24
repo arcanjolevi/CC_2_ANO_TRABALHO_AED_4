@@ -24,6 +24,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
         openF = new JFileChooser();
         openF.setCurrentDirectory(new File("/home/levi"));
         dictionary = new Dictionary();
+        this.number_panel.setVisible(false);
     }
 
     /**
@@ -37,30 +38,33 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         bg = new javax.swing.JPanel();
         status = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        btn_delete = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        btn_insert = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        btn_search = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        btn_similar = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        btn_print = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         labelStatus = new javax.swing.JLabel();
+        number_panel = new javax.swing.JPanel();
+        number_text = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         ordens = new javax.swing.JLabel();
         inputData = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        btn_ok = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,16 +75,16 @@ public class DictionaryWindow extends javax.swing.JFrame {
         status.setBackground(new java.awt.Color(73, 73, 73));
         status.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(64, 64, 64));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_delete.setBackground(new java.awt.Color(64, 64, 64));
+        btn_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
+                btn_deleteMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel1MouseExited(evt);
+                btn_deleteMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel1MouseEntered(evt);
+                btn_deleteMouseEntered(evt);
             }
         });
 
@@ -91,28 +95,28 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/delete2.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btn_deleteLayout = new javax.swing.GroupLayout(btn_delete);
+        btn_delete.setLayout(btn_deleteLayout);
+        btn_deleteLayout.setHorizontalGroup(
+            btn_deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_deleteLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        btn_deleteLayout.setVerticalGroup(
+            btn_deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_deleteLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btn_deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        status.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 280, 60));
+        status.add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 280, 60));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 30)); // NOI18N
@@ -135,16 +139,16 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         status.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 250, 2));
 
-        jPanel3.setBackground(new java.awt.Color(64, 64, 64));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_insert.setBackground(new java.awt.Color(64, 64, 64));
+        btn_insert.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
+                btn_insertMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel3MouseExited(evt);
+                btn_insertMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel3MouseEntered(evt);
+                btn_insertMouseEntered(evt);
             }
         });
 
@@ -155,41 +159,41 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/file2.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout btn_insertLayout = new javax.swing.GroupLayout(btn_insert);
+        btn_insert.setLayout(btn_insertLayout);
+        btn_insertLayout.setHorizontalGroup(
+            btn_insertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_insertLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        btn_insertLayout.setVerticalGroup(
+            btn_insertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_insertLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(17, 17, 17))
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(btn_insertLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        status.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 280, 60));
+        status.add(btn_insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 280, 60));
 
-        jPanel4.setBackground(new java.awt.Color(64, 64, 64));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_search.setBackground(new java.awt.Color(64, 64, 64));
+        btn_search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel4MouseClicked(evt);
+                btn_searchMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel4MouseExited(evt);
+                btn_searchMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel4MouseEntered(evt);
+                btn_searchMouseEntered(evt);
             }
         });
 
@@ -200,39 +204,39 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/search2.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout btn_searchLayout = new javax.swing.GroupLayout(btn_search);
+        btn_search.setLayout(btn_searchLayout);
+        btn_searchLayout.setHorizontalGroup(
+            btn_searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_searchLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        btn_searchLayout.setVerticalGroup(
+            btn_searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_searchLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btn_searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
                     .addComponent(jLabel7))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        status.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 280, 60));
+        status.add(btn_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 280, 60));
 
-        jPanel5.setBackground(new java.awt.Color(64, 64, 64));
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_similar.setBackground(new java.awt.Color(64, 64, 64));
+        btn_similar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel5MouseClicked(evt);
+                btn_similarMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel5MouseExited(evt);
+                btn_similarMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel5MouseEntered(evt);
+                btn_similarMouseEntered(evt);
             }
         });
 
@@ -243,39 +247,39 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/equals2.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout btn_similarLayout = new javax.swing.GroupLayout(btn_similar);
+        btn_similar.setLayout(btn_similarLayout);
+        btn_similarLayout.setHorizontalGroup(
+            btn_similarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_similarLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        btn_similarLayout.setVerticalGroup(
+            btn_similarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_similarLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btn_similarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        status.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 280, 60));
+        status.add(btn_similar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 280, 60));
 
-        jPanel6.setBackground(new java.awt.Color(64, 64, 64));
-        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_print.setBackground(new java.awt.Color(64, 64, 64));
+        btn_print.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel6MouseClicked(evt);
+                btn_printMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel6MouseExited(evt);
+                btn_printMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel6MouseEntered(evt);
+                btn_printMouseEntered(evt);
             }
         });
 
@@ -286,28 +290,28 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/print2.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout btn_printLayout = new javax.swing.GroupLayout(btn_print);
+        btn_print.setLayout(btn_printLayout);
+        btn_printLayout.setHorizontalGroup(
+            btn_printLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_printLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        btn_printLayout.setVerticalGroup(
+            btn_printLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_printLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(btn_printLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
                     .addComponent(jLabel11))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        status.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 280, 60));
+        status.add(btn_print, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 280, 60));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -322,6 +326,41 @@ public class DictionaryWindow extends javax.swing.JFrame {
         labelStatus.setText("Iniciado");
         status.add(labelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
 
+        number_panel.setBackground(new java.awt.Color(73, 73, 73));
+
+        number_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number_textActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel13.setText("Insira o Nº");
+
+        javax.swing.GroupLayout number_panelLayout = new javax.swing.GroupLayout(number_panel);
+        number_panel.setLayout(number_panelLayout);
+        number_panelLayout.setHorizontalGroup(
+            number_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(number_panelLayout.createSequentialGroup()
+                .addGroup(number_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(number_panelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel13))
+                    .addComponent(number_text))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        number_panelLayout.setVerticalGroup(
+            number_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, number_panelLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(number_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+
+        status.add(number_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, 80));
+
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
@@ -333,7 +372,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         ordens.setForeground(new java.awt.Color(153, 153, 153));
-        ordens.setText("Bem Vindo");
+        ordens.setText("Input");
 
         inputData.setBackground(new java.awt.Color(255, 255, 255));
         inputData.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
@@ -345,15 +384,23 @@ public class DictionaryWindow extends javax.swing.JFrame {
                 inputDataActionPerformed(evt);
             }
         });
+        inputData.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                inputDataKeyPressed(evt);
+            }
+        });
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok2.png"))); // NOI18N
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_ok.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_ok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok2.png"))); // NOI18N
+        btn_ok.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_okMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel13MouseExited(evt);
+                btn_okMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel13MouseEntered(evt);
+                btn_okMouseEntered(evt);
             }
         });
 
@@ -384,7 +431,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(inputData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(13, 13, 13)
@@ -405,7 +452,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
                         .addComponent(ordens)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inputData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_ok, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1)
                 .addContainerGap())
@@ -428,89 +475,89 @@ public class DictionaryWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+    private void btn_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseClicked
        
         
-        this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel4.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel5.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel6.setBackground(new java.awt.Color(64,64,64));
+        this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+        this.btn_search.setBackground(new java.awt.Color(64,64,64));
+        this.btn_similar.setBackground(new java.awt.Color(64,64,64));
+        this.btn_print.setBackground(new java.awt.Color(64,64,64));
         
         this.inputData.setEnabled(false);
-        this.jPanel1.setBackground(new java.awt.Color(119, 37, 192));
+        this.btn_delete.setBackground(new java.awt.Color(119, 37, 192));
         int returnValue = this.openF.showOpenDialog(this);
         if(returnValue == JFileChooser.APPROVE_OPTION){
             this.dictionary.removeWords(openF.getSelectedFile().getAbsoluteFile().toString());
             this.jTextArea1.setText(this.dictionary.getWords());
             this.labelStatus.setText("Palavras Removidas");
         }
-        this.jPanel1.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel1MouseClicked
+        this.btn_delete.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_deleteMouseClicked
 
-    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
-         this.jPanel1.setBackground(new java.awt.Color(86,86,86));
-    }//GEN-LAST:event_jPanel1MouseEntered
+    private void btn_deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseEntered
+         this.btn_delete.setBackground(new java.awt.Color(86,86,86));
+    }//GEN-LAST:event_btn_deleteMouseEntered
 
-    private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
-        this.jPanel1.setBackground(new java.awt.Color(64,64,64));
+    private void btn_deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseExited
+        this.btn_delete.setBackground(new java.awt.Color(64,64,64));
         
-    }//GEN-LAST:event_jPanel1MouseExited
+    }//GEN-LAST:event_btn_deleteMouseExited
 
-    private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
-        this.jPanel5.setBackground(new java.awt.Color(86,86,86));
-    }//GEN-LAST:event_jPanel5MouseEntered
+    private void btn_similarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_similarMouseEntered
+        this.btn_similar.setBackground(new java.awt.Color(86,86,86));
+    }//GEN-LAST:event_btn_similarMouseEntered
 
-    private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
-        this.jPanel5.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel5MouseExited
+    private void btn_similarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_similarMouseExited
+        this.btn_similar.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_similarMouseExited
 
-    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
-        this.jPanel4.setBackground(new java.awt.Color(86,86,86));
-    }//GEN-LAST:event_jPanel4MouseEntered
+    private void btn_searchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseEntered
+        this.btn_search.setBackground(new java.awt.Color(86,86,86));
+    }//GEN-LAST:event_btn_searchMouseEntered
 
-    private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
-        this.jPanel4.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel4MouseExited
+    private void btn_searchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseExited
+        this.btn_search.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_searchMouseExited
 
-    private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
-        this.jPanel3.setBackground(new java.awt.Color(86,86,86));
-    }//GEN-LAST:event_jPanel3MouseEntered
+    private void btn_insertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_insertMouseEntered
+        this.btn_insert.setBackground(new java.awt.Color(86,86,86));
+    }//GEN-LAST:event_btn_insertMouseEntered
 
-    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseExited
-       this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel3MouseExited
+    private void btn_insertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_insertMouseExited
+       this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_insertMouseExited
 
-    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
-       this.jPanel6.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel6MouseExited
+    private void btn_printMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_printMouseExited
+       this.btn_print.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_printMouseExited
 
-    private void jPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseEntered
-        this.jPanel6.setBackground(new java.awt.Color(86,86,86));
-    }//GEN-LAST:event_jPanel6MouseEntered
+    private void btn_printMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_printMouseEntered
+        this.btn_print.setBackground(new java.awt.Color(86,86,86));
+    }//GEN-LAST:event_btn_printMouseEntered
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+    private void btn_insertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_insertMouseClicked
         this.inputData.setEnabled(false);
-        this.jPanel3.setBackground(new java.awt.Color(119, 37, 192));
+        this.btn_insert.setBackground(new java.awt.Color(119, 37, 192));
         int returnValue = this.openF.showOpenDialog(this);
         if(returnValue == JFileChooser.APPROVE_OPTION){
             this.dictionary.insertWords(openF.getSelectedFile().getAbsoluteFile().toString());
             this.jTextArea1.setText(this.dictionary.getWords());
             this.labelStatus.setText("Arquivo Carregado");
         }
-        this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-    }//GEN-LAST:event_jPanel3MouseClicked
+        this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+    }//GEN-LAST:event_btn_insertMouseClicked
 
     private void inputDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDataActionPerformed
 
-    private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
-       this.jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok4.png")));
-    }//GEN-LAST:event_jLabel13MouseEntered
+    private void btn_okMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_okMouseEntered
+       this.btn_ok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok4.png")));
+    }//GEN-LAST:event_btn_okMouseEntered
 
-    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
-       this.jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok2.png")));
-    }//GEN-LAST:event_jLabel13MouseExited
+    private void btn_okMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_okMouseExited
+       this.btn_ok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/ok2.png")));
+    }//GEN-LAST:event_btn_okMouseExited
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
         this.jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/close4.png")));
@@ -524,47 +571,77 @@ public class DictionaryWindow extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel14MouseClicked
 
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        
-        this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel1.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel5.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel6.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel4.setBackground(new java.awt.Color(119, 37, 192));
+    private void btn_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseClicked
+        this.action = 0;
+        this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+        this.btn_delete.setBackground(new java.awt.Color(64,64,64));
+        this.btn_similar.setBackground(new java.awt.Color(64,64,64));
+        this.btn_print.setBackground(new java.awt.Color(64,64,64));
+        this.btn_search.setBackground(new java.awt.Color(119, 37, 192));
         
         this.inputData.setEnabled(true);
-        this.ordens.setText("Insira a palavra para a busca");
+        this.labelStatus.setText("Insira a palavra para a busca");
         
-    }//GEN-LAST:event_jPanel4MouseClicked
+    }//GEN-LAST:event_btn_searchMouseClicked
 
-    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+    private void btn_printMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_printMouseClicked
         
-        this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel4.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel5.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel1.setBackground(new java.awt.Color(64,64,64));
+        this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+        this.btn_search.setBackground(new java.awt.Color(64,64,64));
+        this.btn_similar.setBackground(new java.awt.Color(64,64,64));
+        this.btn_delete.setBackground(new java.awt.Color(64,64,64));
         
-        this.jPanel6.setBackground(new java.awt.Color(119, 37, 192));
+        this.btn_print.setBackground(new java.awt.Color(119, 37, 192));
         
         this.inputData.setEnabled(false);
         this.jTextArea1.setText(this.dictionary.getWords());
-        this.ordens.setText("Dicionario Atual");
+        this.labelStatus.setText("Dicionario Atual");
             
-    }//GEN-LAST:event_jPanel6MouseClicked
+    }//GEN-LAST:event_btn_printMouseClicked
 
-    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+    private void btn_similarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_similarMouseClicked
+        this.number_panel.setVisible(true);
+        this.btn_insert.setBackground(new java.awt.Color(64,64,64));
+        this.btn_search.setBackground(new java.awt.Color(64,64,64));
+        this.btn_delete.setBackground(new java.awt.Color(64,64,64));
+        this.btn_print.setBackground(new java.awt.Color(64,64,64));
         
-        this.jPanel3.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel4.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel1.setBackground(new java.awt.Color(64,64,64));
-        this.jPanel6.setBackground(new java.awt.Color(64,64,64));
-        
-        this.jPanel5.setBackground(new java.awt.Color(119, 37, 192));
+        this.btn_similar.setBackground(new java.awt.Color(119, 37, 192));
         
         this.inputData.setEnabled(true);
-        this.ordens.setText("Insira a palavra para a busca de semelhantes");
+        this.labelStatus.setText("Insira a palavra");
         this.action = 1;
-    }//GEN-LAST:event_jPanel5MouseClicked
+    }//GEN-LAST:event_btn_similarMouseClicked
+
+    private void btn_okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_okMouseClicked
+        String aux = "";
+        if(this.action == 0 && this.inputData.isEnabled()) {
+            aux = this.dictionary.queryWord(this.inputData.getText());
+            this.jTextArea1.setText(aux);
+        }else if(this.action == 1 && this.inputData.isEnabled()){
+            aux = this.dictionary.similar(this.inputData.getText(), Integer.parseInt(this.number_text.getText()));
+            this.jTextArea1.setText(aux);
+            this.number_panel.setVisible(false);
+        }
+    }//GEN-LAST:event_btn_okMouseClicked
+
+    private void number_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_number_textActionPerformed
+
+    private void inputDataKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputDataKeyPressed
+        String aux = "";
+        if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+            if(this.action == 0 && this.inputData.isEnabled()) {
+                aux = this.dictionary.queryWord(this.inputData.getText());
+                this.jTextArea1.setText(aux);
+            }else if(this.action == 1 && this.inputData.isEnabled()){
+                aux = this.dictionary.similar(this.inputData.getText(), Integer.parseInt(this.number_text.getText()));
+                this.jTextArea1.setText(aux);
+                this.number_panel.setVisible(false);
+        }
+        }
+    }//GEN-LAST:event_inputDataKeyPressed
 
     /**
      * @param args the command line arguments
@@ -604,6 +681,12 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JPanel btn_delete;
+    private javax.swing.JPanel btn_insert;
+    private javax.swing.JLabel btn_ok;
+    private javax.swing.JPanel btn_print;
+    private javax.swing.JPanel btn_search;
+    private javax.swing.JPanel btn_similar;
     private javax.swing.JTextField inputData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -619,15 +702,12 @@ public class DictionaryWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelStatus;
+    private javax.swing.JPanel number_panel;
+    private javax.swing.JTextField number_text;
     private javax.swing.JLabel ordens;
     private javax.swing.JPanel status;
     // End of variables declaration//GEN-END:variables
