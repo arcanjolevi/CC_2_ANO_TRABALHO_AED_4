@@ -224,7 +224,17 @@ public class Trie {
         return r;
     }
     
-    public void similar(Cellule r, String word, String similar, int different){
+    public String similar(String word, int n){
+        this.buffer = "";
+        if(n > 3)
+            n = 3;
+        similar(this.node, word, "", n);
+        String aux = this.buffer;
+        this.buffer = "";
+        return aux;
+    }
+    
+    private void similar(Cellule r, String word, String similar, int different){
         
         if(r != null && different >= 0){
             similar(r.getLeft(), word, similar, different);
@@ -236,11 +246,11 @@ public class Trie {
             }else{
                 
                 if(word.charAt(0) == r.getC() && r.getNumber() != -1){
-                    System.out.println(similar + r.getC());
+                    this.buffer += similar + r.getC() + "\n";
                     similar(r.getCenter(), word, similar + r.getC(), different);
                 }else{
                     if(r.getNumber() != -1 && different > 0)
-                        System.out.println(similar + r.getC());
+                        this.buffer += similar + r.getC() + "\n";
                     similar(r.getCenter(), word, similar + r.getC(), different - 1);
                 }
                 

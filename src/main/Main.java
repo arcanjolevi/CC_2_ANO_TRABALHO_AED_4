@@ -43,7 +43,7 @@ public class Main {
       System.out.println(teste.countWords());
         System.out.println("---------");
       
-      teste.similar(teste.getNode(), "bama", "", 2);
+        System.err.println(teste.similar("bama", 2));
       
       
       

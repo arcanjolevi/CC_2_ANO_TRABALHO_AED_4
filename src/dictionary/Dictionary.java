@@ -39,4 +39,8 @@ public class Dictionary {
         return this.dictionary.getDictionary();
     }
     
+    public String similar(String word, int n){
+        return this.dictionary.similar(word, n);
+    }
+    
 }
