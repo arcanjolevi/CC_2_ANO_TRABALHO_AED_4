@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package reading;
 
 import java.io.*;
@@ -11,8 +6,14 @@ import java.io.*;
  *
  * @author levi
  */
+//Classe para leitura de arquivos
 public class Reading {
     
+     /**
+     * Metodo que diz se uma palavra eh valida
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public static boolean isValid(String a){
         char[] b = a.toCharArray();
         for(char x:b){
@@ -26,6 +27,11 @@ public class Reading {
         return true;               
     }
     
+     /**
+     * Metodo que le arquivo de palavras
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public static String[] readFile(String locationString){
         String content = "";
         String line;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package structs;
 import org.w3c.dom.css.Counter;
 import static reading.Reading.isValid;
@@ -10,16 +5,19 @@ import static reading.Reading.isValid;
  *
  * @author levi
  */
+//Classe principal para representacao da trie
 public class Trie {
-    private Cellule node;
-    private int number;
-    private String buffer;
-    private int counter;
+    private Cellule node;//Atributo para no raiz da trie
+    private int number;//NUmero para indicar final de uma palavra na insercao
+    private String buffer;//Atributo auxiliar para impressao de dados
+    private int counter;//Atributo auxiliar para contsgem na impressao de dados
     
+    //Getter do atributo raiz
     public Cellule getNode(){
         return this.node;
     }
     
+    //Construtor
     public Trie(){
         this.node = null;
         this.number = 0;
@@ -28,12 +26,22 @@ public class Trie {
         
     }
     
+     /**
+     * Metodo que conta palavras do dicionario
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public int countWords(){
         this.counter = 0;
         this.countWords(this.node);
         return this.counter;
     }
     
+     /**
+     * Metodo auxiliar para contagem do dicionario
+     * Pre-condicao: Buffer zerado
+     * Pos-condicao: Buffer carregado
+     */
     private void countWords(Cellule r){
         if(r != null){
             countWords(r.getLeft());
@@ -44,6 +52,11 @@ public class Trie {
         }
     }
     
+     /**
+     * Metodo principal para remoção de palavras
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public void removeWord(String word){
         word = word.toLowerCase();
         if(isValid(word)) {
@@ -53,10 +66,11 @@ public class Trie {
         
     }
     
-    private boolean checkSoonsNull(Cellule r){
-       return (r.getLeft() == null && r.getCenter() == null && r.getLeft() == null);       
-    }
-    
+     /**
+     * Metodo que coloca um no o mais a direita de uma estrutura trie
+     * Pre-condicao: Trie nao nula
+     * Pos-condicao: nenhuma
+     */
     private void setMinimum(Cellule r, Cellule minimum){
         if(r.getLeft() == null)
             r.setLeft(minimum);
@@ -64,6 +78,11 @@ public class Trie {
             setMinimum(r.getLeft(), minimum);
     }
     
+     /**
+     * Metodo que coloca um no o mais a direita de uma estrutura trie
+     * Pre-condicao: Trie nao nula
+     * Pos-condicao: nenhuma
+     */
     private void setMaximum(Cellule r, Cellule max){
         if(r.getRight() == null)
             r.setRight(max);
@@ -71,6 +90,12 @@ public class Trie {
             setMaximum(r.getRight(), max);
     }
     
+    
+     /**
+     * Metodo auxiliar para remocao de palavras
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     private Cellule removeWord(Cellule r, String word){
         if(r != null){
             if(word.charAt(0) < r.getC()){
@@ -102,6 +127,12 @@ public class Trie {
         return r;
     }
     
+    
+     /**
+     * Metodo auxiliar para mostra dados da trie
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public void showAux(Cellule r, String word){
         String aux = word;
         
@@ -118,6 +149,11 @@ public class Trie {
         }           
     }
     
+     /**
+     * Metodo que retorna string contendo palavra armazenadas no dicionario
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public String getDictionary(){
         this.buffer = "";
         this.getDictionary(this.node, "");
@@ -140,7 +176,11 @@ public class Trie {
     }
     
     
-    
+     /**
+     * Metodo que retorna string contendo palavras do dicionarios, limitadas a 10
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     private void getDictionaryLimit(Cellule r, String word){
         String aux = word;
         if(r != null && this.counter < 10){               
@@ -158,10 +198,21 @@ public class Trie {
         }           
     }
     
+     /**
+     * Metodo principal para mostrar conteudo da trie
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public void show(){
         this.showAux(this.node, "");
     }
     
+    
+     /**
+     * Metodo para consultar uma plavra e suas derivadas
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public String queryWord(String word){
         this.buffer = "";
         String aux;
@@ -171,6 +222,11 @@ public class Trie {
         return aux;
     }
     
+     /**
+     * Metodo auxiliar para consultar palavras
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     private void queryWord(Cellule r, String word, String query){
         
         char firstChar = word.charAt(0);
@@ -191,6 +247,11 @@ public class Trie {
         }
     }
     
+     /**
+     * Metodo principal para insercao
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public void insert(String word){
         word = word.toLowerCase();
         if(isValid(word)) {
@@ -200,6 +261,11 @@ public class Trie {
             
     }
     
+     /**
+     * Metodo auxiliar para insercao
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public Cellule insertAux(Cellule r, String word){
         if(word.length() <= 0)
             return r;
@@ -235,6 +301,11 @@ public class Trie {
         return r;
     }
     
+     /**
+     * Metodo principal para consulta de similares
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     public String similar(String word, int n){
         this.buffer = "";
         if(n > 3)
@@ -245,6 +316,11 @@ public class Trie {
         return aux;
     }
     
+     /**
+     * Metodo auxiliar para consulta de similares
+     * Pre-condicao: Nenhuma
+     * Pos-condicao: nenhuma
+     */
     private void similar(Cellule r, String word, String similar, int different){
         
         if(r != null && different >= 0){
